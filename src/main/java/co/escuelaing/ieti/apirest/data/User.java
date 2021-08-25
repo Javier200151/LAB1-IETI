@@ -1,5 +1,7 @@
 package co.escuelaing.ieti.apirest.data;
 
+import co.escuelaing.ieti.apirest.dto.UserDTO;
+
 public class User {
     private String id;
     private String name;
@@ -11,7 +13,10 @@ public class User {
         this.id = id;
     }
 
-    public User() {
+    public User(UserDTO userDTO) {
+        this.name = userDTO.getName();
+        this.email = userDTO.getEmail();
+        this.lastName = userDTO.getLastName();
     }
 
     public User(String id, String name, String email, String lastName, String createdAt) {
